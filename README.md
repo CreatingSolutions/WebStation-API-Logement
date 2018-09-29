@@ -1,2 +1,2 @@
-# WebStation-API-Logement [![Build Status](https://travis-ci.org/CreatingSolutions/WebStation-API-Logement.svg?branch=master)](https://travis-ci.org/CreatingSolutions/WebStation-API-Logement)
+# WebStation-API-Logement [![Build Status](https://travis-ci.org/CreatingSolutions/WebStation-API-Logement.svg?branch=master)](https://travis-ci.org/CreatingSolutions/WebStation-API-Logement) [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=webstation-api-logement&metric=alert_status)](https://sonarcloud.io/dashboard/index/webstation-api-logement)
 Gestion des logements pour l'offre web station
