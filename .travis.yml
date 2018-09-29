@@ -5,7 +5,7 @@ install: true
 
 addons:
   sonarcloud:
-    organization: "creatingsolutions-github" # the key of the org you chose at step #3
+    organization: "CreatingSolutions" # the key of the org you chose at step #3
     token:
       secure: "DQVzvSDwb72wC8MRTrqXVP62BlGdrZrCGCLQmqXWgvNV/u1nVgJHiLl2/r0qWuGacCBpvvv1wSbHf461410M5nm6haGMFZ2wykKIjldKR2xS5ySsLi74RXOkPtxCicJh7bnjLvYj2IBjP+GlLub7eBt4Zf8YBEE+RaJi0u05vCmz3+y1VI2myi6y+yKsTrFl4/pbDJ9oiK4kJLI6gxNaLMaB9JdYMjOFCafrAr4MyNz2Oc7B/Mn7ABcs8DoNikcf+7bJ/hfusPS/FQLhWTc1VRQAmJNCo04GFk37BJsoUW5CdV7/5w0TVMamK4kQgM5YHy4qRvx/s2UVKUmqZidUGjnCUEaKoVXWwCZEBWol1MnE+Q2D4tiFzVi/uPD/p01JQ+VnNPLnjiIcK37OVZei2MSaq7hfbcKtOqxTPoYnY8YbDbTkbsOuGxlBPZpL4k+OrWnfSGR1iQbyW0OlOWkDBE+Yj+NfClyhaENbfwsqAq7ztwhbMeD+fxkGAxF19hoEwMihuU422i72NyzNx+ZKsLToW+FeFWKLjv0DgsehJbW3Up2BeivC9dL9VdSLr6Y4jt6mWyuGMyO3v/b2FHFuNFYPNYQu7B4dxSP8967ESc8y6xK6GtLRymilmxHe4ugTTIvc20zrw/ODEvaTIA0KXKmrQqRm4OimARZQJJqhoV8="
 
