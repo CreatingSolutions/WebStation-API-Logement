@@ -5,9 +5,9 @@ install: true
 
 addons:
   sonarcloud:
-    organization: "debaerdm-github" # the key of the org you chose at step #3
+    organization: "creatingsolutions-github" # the key of the org you chose at step #3
     token:
-      secure: "DQVzvSDwb72wC8MRTrqXVP62BlGdrZrCGCLQmqXWgvNV/u1nVgJHiLl2/r0qWuGacCBpvvv1wSbHf461410M5nm6haGMFZ2wykKIjldKR2xS5ySsLi74RXOkPtxCicJh7bnjLvYj2IBjP+GlLub7eBt4Zf8YBEE+RaJi0u05vCmz3+y1VI2myi6y+yKsTrFl4/pbDJ9oiK4kJLI6gxNaLMaB9JdYMjOFCafrAr4MyNz2Oc7B/Mn7ABcs8DoNikcf+7bJ/hfusPS/FQLhWTc1VRQAmJNCo04GFk37BJsoUW5CdV7/5w0TVMamK4kQgM5YHy4qRvx/s2UVKUmqZidUGjnCUEaKoVXWwCZEBWol1MnE+Q2D4tiFzVi/uPD/p01JQ+VnNPLnjiIcK37OVZei2MSaq7hfbcKtOqxTPoYnY8YbDbTkbsOuGxlBPZpL4k+OrWnfSGR1iQbyW0OlOWkDBE+Yj+NfClyhaENbfwsqAq7ztwhbMeD+fxkGAxF19hoEwMihuU422i72NyzNx+ZKsLToW+FeFWKLjv0DgsehJbW3Up2BeivC9dL9VdSLr6Y4jt6mWyuGMyO3v/b2FHFuNFYPNYQu7B4dxSP8967ESc8y6xK6GtLRymilmxHe4ugTTIvc20zrw/ODEvaTIA0KXKmrQqRm4OimARZQJJqhoV8="
+      secure: "jptgGKZKGN1aK932NX2bQckEXBQsmtMWZhQ5tyJYKJxes6b3x1svG3Fy3PSieYOxT5tRtFoFRvojQXCljMpnkhyGLKfFjCsTefe3HtPKw9lqLIiuY6hLLFl5QFmb/W8FE/l6G8LeVjqVN2TTijbWCuo7aTazhClvn7icNw+rdpTBdds/qcORxj+IVZe4LFN6P2xOAvU1gSR+bTaHg9CH33iqWdM3FrWqZJmz988lfCrtcZ+AYbCbn1q7q295lD+z2AUSh6B6cn8KcO+ShWr0bYl005HzUXE+Huj4bcI7/Dcx1Gmu2YRUx33yp65TDsKoN8TdukIZEUWR44Fk1p0nECh2n3CUGj7xB7PVLstGZxTwTgQ7KZapNavIuY/JHfoggOy5SZfrkDHCRdR7WGTeuixOaZpNXQPfDF7BfidL43TssLVtu6ptMI5ohpdCv5B/hg0ztK05xSbNgk/jciFvjyHUDhUk3mMCCmd/1wHEW1v+4XjrSQ2cbRn735XAbv0yrZ7gv+OCWM+LUPiHA+XDKrEyd9pvODhtMn93KFh3rTmdGrML5BM40Fklok7yUJhy3nUdBoOhY9aAf9yXyEP5GXl1s14yKnzw1YqytJQqBrru7U7Pnj8wuVwfHIbMgajA8DWLo+38h0DuEKasAkUf9u3ASgTH4Bflpc4ji/CMK6c="
 
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
