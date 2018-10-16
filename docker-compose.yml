@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  logement:
+    image: logement
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+    - 8083:8083
+    volumes:
+    - /data/spring-boot-app
