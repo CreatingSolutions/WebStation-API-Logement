@@ -1,5 +1,7 @@
 package webstationapi.Entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +26,14 @@ public class Flt_Flat {
 
 	@Id
 	@Column(name="ID_FLAT")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(
+			strategy= GenerationType.AUTO,
+			generator="native"
+	)
+	@GenericGenerator(
+			name = "native",
+			strategy = "native"
+	)
 	private long id_flat;
 	// Long primary key, auto-incremented value
 

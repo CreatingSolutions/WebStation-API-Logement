@@ -1,5 +1,7 @@
 package webstationapi.Entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -34,7 +36,14 @@ public class Flt_Resa {
 
 	@Id
 	@Column(name="ID_RESA")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(
+			strategy= GenerationType.AUTO,
+			generator="native"
+	)
+	@GenericGenerator(
+			name = "native",
+			strategy = "native"
+	)
 	private long id_resa;
 
 	@OneToOne(fetch = FetchType.LAZY)
