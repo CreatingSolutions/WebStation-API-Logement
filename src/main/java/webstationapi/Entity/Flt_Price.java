@@ -38,7 +38,7 @@ public class Flt_Price implements Serializable {
 	private Flt_Flat flat;
 	// Long primary key, foreign key to FLT_FLATS(id_flat)
 
-	@Column(name="END_DAY")
+	@Column(name="PRICE")
 	private double price;
 	// Double field
 
