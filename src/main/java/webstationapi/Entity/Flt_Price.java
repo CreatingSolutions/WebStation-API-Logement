@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * @Class FLT_PRICES
@@ -23,7 +24,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="FLT_PRICES")
-public class Flt_Price {
+public class Flt_Price implements Serializable {
 
 	@Id 
 	@OneToOne(fetch = FetchType.LAZY)
