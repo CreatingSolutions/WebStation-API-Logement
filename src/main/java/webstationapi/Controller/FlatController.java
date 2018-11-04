@@ -24,8 +24,6 @@ public class FlatController {
     public List<Flt_Flat> getFlats()
     {
      List<Flt_Flat> r = flatService.getFlats();
-
      return  r;
-    }
-
+     }
 }
