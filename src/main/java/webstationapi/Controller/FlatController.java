@@ -18,8 +18,8 @@ public class FlatController {
     private FlatService flatService;
 
     @GetMapping("/flats")
-    @ResponseBody
     public List<Flt_Flat> getFlats() {
+        System.out.println("OK");
         return flatService.getFlats();
     }
 }
