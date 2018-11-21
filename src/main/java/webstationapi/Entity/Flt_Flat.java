@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 /**
@@ -30,10 +31,16 @@ public class Flt_Flat {
 	@Column(name="DESCRIPTION", length = 150)
 	private String description;
 	// String field
+	
+	@Lob
+	@Column(name="PHOTO", columnDefinition="BLOB")
+	private byte[] photo;
+	// BLOB picture of the flat
 
 	public Flt_Flat() {}
-	public Flt_Flat(long id_flat, String description) {
+	public Flt_Flat(long id_flat, String description, byte[] photo) {
 		this.id_flat = id_flat;
 		this.description = description;
+		this.photo = photo;
 	}
 }
