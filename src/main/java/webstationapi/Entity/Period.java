@@ -24,7 +24,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="FLT_PERIODS")
+@Table(name="FLAT_PERIODS")
 public class Period {
 
 	@Id 
