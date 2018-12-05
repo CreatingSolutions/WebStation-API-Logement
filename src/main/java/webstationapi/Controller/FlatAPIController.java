@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import webstationapi.Entity.Booking;
@@ -38,8 +38,8 @@ public class FlatAPIController {
     }
     
     @PostMapping("/book")
-    public void bookFlat(@RequestBody int userId, @RequestBody long flatId, @RequestBody long periodId, 
-    		@RequestBody boolean laundry, @RequestBody boolean garage, @RequestBody boolean baby) throws Exception {
+    public void bookFlat(@RequestParam int userId, @RequestParam long flatId, @RequestParam long periodId, 
+    		@RequestParam boolean laundry, @RequestParam boolean garage, @RequestParam boolean baby) throws Exception {
     	
     	Flat flat = flatService.findById(flatId).orElseThrow(() -> new Exception("No flat matching the given ID."));
     	Period period = periodService.findById(periodId).orElseThrow(() -> new Exception("No period matching the given ID."));
