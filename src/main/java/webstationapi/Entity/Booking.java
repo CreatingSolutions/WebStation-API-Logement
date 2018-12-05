@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-//import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -38,7 +37,7 @@ public class Booking {
 	@Column(name="ID_BOOKING")
 	@GeneratedValue(strategy= GenerationType.AUTO, generator="native")
 	@GenericGenerator(name = "native", strategy = "native")
-	private long id_resa;
+	private long bookingId;
 
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="ID_FLAT")

@@ -20,6 +20,7 @@ public class BookingService {
 	
 	public void createBooking(Booking booking) {
 		bookingRepository.save(booking);
+		System.out.println("test");
 	}
 	
 }
