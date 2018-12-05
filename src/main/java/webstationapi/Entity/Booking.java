@@ -34,35 +34,35 @@ import javax.persistence.Table;
 @Table(name="FLAT_BOOKINGS")
 public class Booking {
 
-	@Id
-	@Column(name="ID_BOOKING")
-	@GeneratedValue(strategy= GenerationType.AUTO, generator="native")
-	@GenericGenerator(name = "native", strategy = "native")
-	private long id_resa;
+    @Id
+    @Column(name="ID_BOOKING")
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native", strategy = "native")
+    private long bookingId;
 
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="ID_FLAT")
-	private Flat flat;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="ID_FLAT")
+    private Flat flat;
 
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="ID_PERIOD")
-	private Period period;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="ID_PERIOD")
+    private Period period;
 
-	@Column(name="LAUNDRY")
-	private boolean laundry;
+    @Column(name="LAUNDRY")
+    private boolean laundry;
 
-	@Column(name="GARAGE")
-	private boolean garage;
+    @Column(name="GARAGE")
+    private boolean garage;
 
-	@Column(name="BABY")
-	private boolean baby;
+    @Column(name="BABY")
+    private boolean baby;
 
-	public Booking() {}
-	public Booking(Flat flat, Period period, boolean laundry, boolean garage, boolean baby) {
-		this.flat = flat;
-		this.period = period;
-		this.laundry = laundry;
-		this.garage = garage;
-		this.baby = baby;
-	}
+    public Booking() {}
+    public Booking(Flat flat, Period period, boolean laundry, boolean garage, boolean baby) {
+        this.flat = flat;
+        this.period = period;
+        this.laundry = laundry;
+        this.garage = garage;
+        this.baby = baby;
+    }
 }

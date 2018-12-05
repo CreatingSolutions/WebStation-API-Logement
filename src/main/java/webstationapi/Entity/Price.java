@@ -26,25 +26,25 @@ import java.io.Serializable;
 @Table(name="FLAT_PRICES")
 public class Price implements Serializable {
 
-	private static final long serialVersionUID = 3484508023001200373L;
+    private static final long serialVersionUID = 3484508023001200373L;
 
-	@Id 
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="ID_PERIOD")
-	private Period period;
+    @Id
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="ID_PERIOD")
+    private Period period;
 
-	@Id 
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="ID_FLAT")
-	private Flat flat;
+    @Id
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="ID_FLAT")
+    private Flat flat;
 
-	@Column(name="PRICE")
-	private double price;
+    @Column(name="PRICE")
+    private double price;
 
-	public Price() {}
-	public Price(Period period, Flat flat, Double price) {
-		this.period = period;
-		this.flat = flat;
-		this.price = price;
-	}
+    public Price() {}
+    public Price(Period period, Flat flat, Double price) {
+        this.period = period;
+        this.flat = flat;
+        this.price = price;
+    }
 }
