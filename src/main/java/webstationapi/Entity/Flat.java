@@ -20,7 +20,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="FLT_FLATS")
+@Table(name="FLAT_FLATS")
 public class Flat {
 
 	@Id

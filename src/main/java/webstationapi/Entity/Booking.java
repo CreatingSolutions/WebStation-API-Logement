@@ -31,11 +31,11 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="FLT_RESAS")
+@Table(name="FLAT_BOOKINGS")
 public class Booking {
 
 	@Id
-	@Column(name="ID_RESA")
+	@Column(name="ID_BOOKING")
 	@GeneratedValue(strategy= GenerationType.AUTO, generator="native")
 	@GenericGenerator(name = "native", strategy = "native")
 	private long id_resa;
