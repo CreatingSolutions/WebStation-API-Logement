@@ -23,7 +23,7 @@ import java.io.Serializable;
  */
 
 @Entity
-@Table(name="FLT_PRICES")
+@Table(name="FLAT_PRICES")
 public class Price implements Serializable {
 
 	private static final long serialVersionUID = 3484508023001200373L;
