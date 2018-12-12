@@ -11,11 +11,11 @@ import javax.persistence.Table;
 
 /**
  * @Class FLT_FLATS
- * 
+ *
  * Two columns :
  * 		- id_flat, a long primary key, auto-incremented value;
  * 		- description, a String field, describes the flat.
- * 
+ *
  * To be used to store flats from the complex.
  */
 
