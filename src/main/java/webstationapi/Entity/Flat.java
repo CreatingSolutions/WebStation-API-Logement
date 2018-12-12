@@ -20,28 +20,20 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="FLT_FLATS")
-public class Flt_Flat {
+@Table(name="FLAT_FLATS")
+public class Flat {
 
 	@Id
 	@Column(name="ID_FLAT")
-	@GeneratedValue(
-			strategy= GenerationType.AUTO,
-			generator="native"
-	)
-	@GenericGenerator(
-			name = "native",
-			strategy = "native"
-	)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator="native")
+	@GenericGenerator(name = "native", strategy = "native")
 	private long id_flat;
-	// Long primary key, auto-incremented value
 
 	@Column(name="DESCRIPTION", length = 150)
 	private String description;
-	// String field
 
-	public Flt_Flat() {}
-	public Flt_Flat(long id_flat, String description) {
+	public Flat() {}
+	public Flat(long id_flat, String description) {
 		this.id_flat = id_flat;
 		this.description = description;
 	}
@@ -49,6 +41,7 @@ public class Flt_Flat {
 	public long getId_flat() {
 		return id_flat;
 	}
+	// Long primary key, auto-incremented value
 
 	public void setId_flat(long id_flat) {
 		this.id_flat = id_flat;

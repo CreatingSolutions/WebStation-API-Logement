@@ -23,27 +23,26 @@ import java.io.Serializable;
  */
 
 @Entity
-@Table(name="FLT_PRICES")
-public class Flt_Price implements Serializable {
+@Table(name="FLAT_PRICES")
+public class Price implements Serializable {
+
+	private static final long serialVersionUID = 3484508023001200373L;
 
 	@Id 
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="ID_PERIOD")
-	private Flt_Period period;
-	// Long primary key, foreign key to FLT_PERIODS(id_period)
+	private Period period;
 
 	@Id 
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="ID_FLAT")
-	private Flt_Flat flat;
-	// Long primary key, foreign key to FLT_FLATS(id_flat)
+	private Flat flat;
 
 	@Column(name="PRICE")
 	private double price;
-	// Double field
 
-	public Flt_Price() {}
-	public Flt_Price(Flt_Period period, Flt_Flat flat, Double price) {
+	public Price() {}
+	public Price(Period period, Flat flat, Double price) {
 		this.period = period;
 		this.flat = flat;
 		this.price = price;

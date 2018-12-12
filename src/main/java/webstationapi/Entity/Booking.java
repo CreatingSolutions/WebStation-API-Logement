@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-//import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -31,48 +30,36 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="FLT_RESAS")
-public class Flt_Resa {
+@Table(name="FLAT_BOOKINGS")
+public class Booking {
 
 	@Id
-	@Column(name="ID_RESA")
-	@GeneratedValue(
-			strategy= GenerationType.AUTO,
-			generator="native"
-	)
-	@GenericGenerator(
-			name = "native",
-			strategy = "native"
-	)
-	private long id_resa;
+	@Column(name="ID_BOOKING")
+	@GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+	@GenericGenerator(name = "native", strategy = "native")
+	private long bookingId;
 
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="ID_FLAT")
-	private Flt_Flat flat;
+	private Flat flat;
 
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="ID_PERIOD")
-	private Flt_Period period;
-
-	/*@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="ID_USER")
-	private Ws_User user;*/
+	private Period period;
 
 	@Column(name="LAUNDRY")
-	private int laundry;
+	private boolean laundry;
 
 	@Column(name="GARAGE")
-	private int garage;
+	private boolean garage;
 
 	@Column(name="BABY")
-	private int baby;
+	private boolean baby;
 
-	public Flt_Resa() {}
-	public Flt_Resa(Long id_resa, Flt_Flat flat, Flt_Period period, /*Ws_User user,*/ int laundry, int garage, int baby) {
-		this.id_resa = id_resa;
+	public Booking() {}
+	public Booking(Flat flat, Period period, boolean laundry, boolean garage, boolean baby) {
 		this.flat = flat;
 		this.period = period;
-		//this.user = user;
 		this.laundry = laundry;
 		this.garage = garage;
 		this.baby = baby;

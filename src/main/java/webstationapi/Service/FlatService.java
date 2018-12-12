@@ -1,25 +1,28 @@
 package webstationapi.Service;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import webstationapi.Entity.Flt_Flat;
-import webstationapi.Repository.FlatRepository;
 
-import java.util.List;
+import webstationapi.Entity.Flat;
+import webstationapi.Repository.FlatRepository;
 
 @Service
 public class FlatService {
 
-
-    private final FlatRepository flatRepository;
-
-    public FlatService(FlatRepository flatRepository) {
-        super();
-        this.flatRepository = flatRepository;
-    }
+	@Autowired
+    private FlatRepository flatRepository;
 
     @Transactional
-    public List<Flt_Flat> getFlats() {
+    public List<Flat> getFlats() {
         return this.flatRepository.findAll();
+    }
+    
+    @Transactional
+    public Optional<Flat> findById(long id) {
+    	return flatRepository.findById(id);
     }
 }
