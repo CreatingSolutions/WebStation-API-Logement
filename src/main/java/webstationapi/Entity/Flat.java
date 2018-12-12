@@ -11,11 +11,11 @@ import javax.persistence.Table;
 
 /**
  * @Class FLT_FLATS
- * 
+ *
  * Two columns :
  * 		- id_flat, a long primary key, auto-incremented value;
  * 		- description, a String field, describes the flat.
- * 
+ *
  * To be used to store flats from the complex.
  */
 
@@ -24,17 +24,15 @@ import javax.persistence.Table;
 public class Flat {
 
 	@Id
-	@Column(name = "ID_FLAT")
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+	@Column(name="ID_FLAT")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator="native")
 	@GenericGenerator(name = "native", strategy = "native")
 	private long id_flat;
 
-	@Column(name = "DESCRIPTION", length = 150)
+	@Column(name="DESCRIPTION", length = 150)
 	private String description;
 
-	public Flat() {
-	}
-
+	public Flat() {}
 	public Flat(long id_flat, String description) {
 		this.id_flat = id_flat;
 		this.description = description;

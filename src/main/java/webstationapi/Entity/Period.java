@@ -27,26 +27,26 @@ import javax.persistence.Table;
 @Table(name="FLAT_PERIODS")
 public class Period {
 
-    @Id
-    @Column(name="ID_PERIOD")
-    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
-    @GenericGenerator(name = "native", strategy = "native")
-    private long periodId;
+	@Id 
+	@Column(name="ID_PERIOD")
+	@GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+	@GenericGenerator(name = "native", strategy = "native")
+	private long periodId;
 
-    @Column(name="START_DAY")
-    private Date startDay;
+	@Column(name="START_DAY")
+	private Date startDay;
 
-    @Column(name="END_DAY")
-    private Date endDay;
+	@Column(name="END_DAY")
+	private Date endDay;
 
-    @Column(name = "SEASON")
-    private int season;
+	@Column(name = "SEASON")
+	private int season;
 
-    public Period() {}
-    public Period(long periodId, Date startDay, Date endDay, int season) {
-        this.periodId = periodId;
-        this.startDay = startDay;
-        this.endDay = endDay;
-        this.season = season;
-    }
+	public Period() {}
+	public Period(long periodId, Date startDay, Date endDay, int season) {
+		this.periodId = periodId;
+		this.startDay = startDay;
+		this.endDay = endDay;
+		this.season = season;
+	}
 }

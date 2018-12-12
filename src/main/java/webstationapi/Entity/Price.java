@@ -11,14 +11,14 @@ import java.io.Serializable;
 
 /**
  * @Class FLT_PRICES
- * 
+ *
  * Three columns :
  * 		- id_period, a long, foreign key to FLT_PERIODS(id_period);
  * 		- id_flat, a long, foreign key to FLT_FLATS(id_flat);
  * 		- price, a double, stores the price corresponding to a flat and the period it's booked
- * 
+ *
  * Primary key is composed of two fields : (id_period, id_flat).
- * 
+ *
  * To be used to store prices for a flat during a certain period.
  */
 

@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 /**
  * @Class FLT_RESAS
- * 
+ *
  * Seven columns :
  * 		- id_resa, a long primary key, auto-incremented value;
  * 		- id_flat, a long, foreign key to FLT_FLATS(id_flat);
@@ -23,9 +23,9 @@ import javax.persistence.Table;
  * 		- laundry, an integer, stores the value for the laundry option (1 = yes, 0 = no)
  * 		- garage, an integer, stores the value for the garage option (1 = yes, 0 = no)
  * 		- baby, an integer, stores the value for the baby option (1 = yes, 0 = no)
- * 
+ *
  * Primary key is composed of two fields : (id_period, id_flat).
- * 
+ *
  * To be used to store prices for a flat during a certain period.
  */
 
