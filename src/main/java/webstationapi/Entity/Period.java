@@ -1,5 +1,7 @@
 package webstationapi.Entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -16,32 +18,35 @@ import javax.persistence.Table;
  * 		- id_period, a long primary key, auto-incremented value;
  * 		- startDay, a Date, stores the beginning of the period;
  * 		- endDay, a Date, stores the ending of the period.
+ * 		- season, Integer, stores the season 0 winter 1 summer
  * 
- * To be used to store available booking periods (Summer or Winter).
+ * To be used to store available booking periods.
  */
 
 @Entity
-@Table(name="FLT_PERIODS")
-public class Flt_Period {
+@Table(name="FLAT_PERIODS")
+public class Period {
 
 	@Id 
 	@Column(name="ID_PERIOD")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id_period;
-	// Long primary key, auto-incremented value
+	@GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+	@GenericGenerator(name = "native", strategy = "native")
+	private long periodId;
 
 	@Column(name="START_DAY")
 	private Date startDay;
-	// Date field
 
 	@Column(name="END_DAY")
 	private Date endDay;
-	// Date field
-	
-	public Flt_Period() {}
-	public Flt_Period(long id_period, Date startDay, Date endDay) {
-		this.id_period = id_period;
+
+	@Column(name = "SEASON")
+	private int season;
+
+	public Period() {}
+	public Period(long periodId, Date startDay, Date endDay, int season) {
+		this.periodId = periodId;
 		this.startDay = startDay;
 		this.endDay = endDay;
+		this.season = season;
 	}
 }
