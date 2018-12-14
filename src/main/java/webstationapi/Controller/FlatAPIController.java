@@ -32,6 +32,11 @@ public class FlatAPIController {
         return flatService.getFlats();
     }
     
+    @GetMapping("/flat/{id}")
+    public Flat getFlat(long flatId) {
+    	return flatService.findById(flatId);
+    }
+    
     @GetMapping("/bookings")
     public List<Booking> getBookings() {
         return bookingService.getBookings();
@@ -41,8 +46,8 @@ public class FlatAPIController {
     public void bookFlat(@RequestParam int userId, @RequestParam long flatId, @RequestParam long periodId, 
     		@RequestParam boolean laundry, @RequestParam boolean garage, @RequestParam boolean baby) throws Exception {
     	
-    	Flat flat = flatService.findById(flatId).orElseThrow(() -> new Exception("No flat matching the given ID."));
-    	Period period = periodService.findById(periodId).orElseThrow(() -> new Exception("No period matching the given ID."));
+    	Flat flat = flatService.findById(flatId);
+    	Period period = periodService.findById(periodId);
 		
     	Booking booking = new Booking(flat, period, laundry, garage, baby);
     	bookingService.createBooking(booking);
