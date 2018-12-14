@@ -95,7 +95,7 @@ public class Flat {
 		return sdbwc;
 	}
 
-	public void setSdbwc(String sdbwc) {
+	public void setSdbwc(boolean sdbwc) {
 		this.sdbwc = sdbwc;
 	}
 	
@@ -103,7 +103,7 @@ public class Flat {
 		return pets;
 	}
 
-	public void setPets(String pets) {
+	public void setPets(boolean pets) {
 		this.pets = pets;
 	}
 	
@@ -111,7 +111,7 @@ public class Flat {
 		return wifi;
 	}
 
-	public void setWifi(String wifi) {
+	public void setWifi(boolean wifi) {
 		this.wifi = wifi;
 	}
 }
