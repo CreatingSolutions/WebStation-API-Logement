@@ -31,11 +31,31 @@ public class Flat {
 
 	@Column(name="DESCRIPTION", length = 150)
 	private String description;
+	
+	@Column(name="NB_PERSONNES", length = 150)
+	private String nbPersonnes;
+	
+	@Column(name="SDBWC")
+	private boolean sdbwc;
+	
+	@Column(name="PETS")
+	private boolean pets;
+	
+	@Column(name="WIFI")
+	private boolean wifi;
+	
+	@Column(name="ORIENTATION", length = 150)
+	private String orientation;
 
 	public Flat() {}
-	public Flat(long id_flat, String description) {
+	public Flat(long id_flat, String description, String nbPersonnes, boolean sdbwc, boolean pets, boolean wifi, String orientation) {
 		this.id_flat = id_flat;
 		this.description = description;
+		this.nbPersonnes = nbPersonnes;
+		this.sdbwc = sdbwc;
+		this.pets = pets;
+		this.wifi = wifi;
+		this.orientation = orientation;
 	}
 
 	public long getId_flat() {
@@ -53,5 +73,45 @@ public class Flat {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public String getNbPersonnes() {
+		return nbPersonnes;
+	}
+
+	public void setNbPersonnes(String nbPersonnes) {
+		this.nbPersonnes = nbPersonnes;
+	}
+	
+	public String getOrientation() {
+		return orientation;
+	}
+
+	public void setOrientation(String orientation) {
+		this.orientation = orientation;
+	}
+	
+	public boolean getSdbwc() {
+		return sdbwc;
+	}
+
+	public void setSdbwc(boolean sdbwc) {
+		this.sdbwc = sdbwc;
+	}
+	
+	public boolean getPets() {
+		return pets;
+	}
+
+	public void setPets(boolean pets) {
+		this.pets = pets;
+	}
+	
+	public boolean getWifi() {
+		return wifi;
+	}
+
+	public void setWifi(boolean wifi) {
+		this.wifi = wifi;
 	}
 }
