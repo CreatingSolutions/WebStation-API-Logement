@@ -76,7 +76,7 @@ public class Flat {
 	}
 	
 	public String getNbPersonnes() {
-		return description;
+		return nbPersonnes;
 	}
 
 	public void setNbPersonnes(String nbPersonnes) {
