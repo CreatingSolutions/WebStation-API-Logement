@@ -27,29 +27,33 @@ public class Flat {
 	@Column(name="ID_FLAT")
 	@GeneratedValue(strategy = GenerationType.AUTO, generator="native")
 	@GenericGenerator(name = "native", strategy = "native")
-	private long id_flat;
+	private long flatId;
+
+	@Column(name="TITLE", length = 50)
+	private String title;
 
 	@Column(name="DESCRIPTION", length = 150)
 	private String description;
-	
+
 	@Column(name="NB_PERSONNES", length = 150)
 	private String nbPersonnes;
-	
+
 	@Column(name="SDBWC")
 	private boolean sdbwc;
-	
+
 	@Column(name="PETS")
 	private boolean pets;
-	
+
 	@Column(name="WIFI")
 	private boolean wifi;
-	
+
 	@Column(name="ORIENTATION", length = 150)
 	private String orientation;
 
 	public Flat() {}
-	public Flat(long id_flat, String description, String nbPersonnes, boolean sdbwc, boolean pets, boolean wifi, String orientation) {
-		this.id_flat = id_flat;
+	public Flat(long flatId, String title, String description, String nbPersonnes, boolean sdbwc, boolean pets, boolean wifi, String orientation) {
+		this.flatId = flatId;
+		this.title = title;
 		this.description = description;
 		this.nbPersonnes = nbPersonnes;
 		this.sdbwc = sdbwc;
@@ -58,60 +62,21 @@ public class Flat {
 		this.orientation = orientation;
 	}
 
-	public long getId_flat() {
-		return id_flat;
-	}
-	// Long primary key, auto-incremented value
+	public long getFlatId() { return flatId; }
+	public void setFlatId(long flatId) { this.flatId = flatId; }
+	public String getTitle() { return title; }
+	public void setTitle(String title) { this.title = title; }
+	public String getDescription() { return description; }
+	public void setDescription(String description) { this.description = description; }
+	public String getNbPersonnes() { return nbPersonnes; }
+	public void setNbPersonnes(String nbPersonnes) { this.nbPersonnes = nbPersonnes; }
+	public String getOrientation() { return orientation; }
+	public void setOrientation(String orientation) { this.orientation = orientation; }
+	public boolean getSdbwc() { return sdbwc; }
+	public void setSdbwc(boolean sdbwc) { this.sdbwc = sdbwc; }
+	public boolean getPets() { return pets; }
+	public void setPets(boolean pets) { this.pets = pets; }
+	public boolean getWifi() { return wifi; }
+	public void setWifi(boolean wifi) { this.wifi = wifi; }
 
-	public void setId_flat(long id_flat) {
-		this.id_flat = id_flat;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
-	public String getNbPersonnes() {
-		return nbPersonnes;
-	}
-
-	public void setNbPersonnes(String nbPersonnes) {
-		this.nbPersonnes = nbPersonnes;
-	}
-	
-	public String getOrientation() {
-		return orientation;
-	}
-
-	public void setOrientation(String orientation) {
-		this.orientation = orientation;
-	}
-	
-	public boolean getSdbwc() {
-		return sdbwc;
-	}
-
-	public void setSdbwc(boolean sdbwc) {
-		this.sdbwc = sdbwc;
-	}
-	
-	public boolean getPets() {
-		return pets;
-	}
-
-	public void setPets(boolean pets) {
-		this.pets = pets;
-	}
-	
-	public boolean getWifi() {
-		return wifi;
-	}
-
-	public void setWifi(boolean wifi) {
-		this.wifi = wifi;
-	}
 }
