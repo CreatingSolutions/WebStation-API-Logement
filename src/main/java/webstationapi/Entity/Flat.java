@@ -31,6 +31,21 @@ public class Flat {
 
 	@Column(name="DESCRIPTION", length = 150)
 	private String description;
+	
+	@Column(name="NB_PERSONNES", length = 150)
+	private String nbPersonnes;
+	
+	@Column(name="SDBWC")
+	private boolean nbPersonnes;
+	
+	@Column(name="PETS")
+	private boolean pets;
+	
+	@Column(name="WIFI")
+	private boolean wifi;
+	
+	@Column(name="ORIENTATION", length = 150)
+	private String orientation;
 
 	public Flat() {}
 	public Flat(long id_flat, String description) {
