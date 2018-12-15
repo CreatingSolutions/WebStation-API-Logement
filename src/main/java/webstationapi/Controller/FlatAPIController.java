@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,24 +32,24 @@ public class FlatAPIController {
     public List<Flat> getFlats() {
         return flatService.getFlats();
     }
-    
+
     @GetMapping("/flat/{id}")
-    public Flat getFlat(long flatId) {
-    	return flatService.findById(flatId);
+    public Flat getFlat(@PathVariable long id) {
+    	return flatService.findById(id);
     }
-    
+
     @GetMapping("/bookings")
     public List<Booking> getBookings() {
         return bookingService.getBookings();
     }
-    
+
     @PostMapping("/book")
-    public void bookFlat(@RequestParam int userId, @RequestParam long flatId, @RequestParam long periodId, 
+    public void bookFlat(@RequestParam int userId, @RequestParam long flatId, @RequestParam long periodId,
     		@RequestParam boolean laundry, @RequestParam boolean garage, @RequestParam boolean baby) throws Exception {
-    	
+
     	Flat flat = flatService.findById(flatId);
     	Period period = periodService.findById(periodId);
-		
+
     	Booking booking = new Booking(flat, period, laundry, garage, baby);
     	bookingService.createBooking(booking);
     }
