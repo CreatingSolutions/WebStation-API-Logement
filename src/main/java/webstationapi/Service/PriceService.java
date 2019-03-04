@@ -1,22 +1,22 @@
 package webstationapi.Service;
 
+import java.sql.Date;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import webstationapi.Entity.Period;
 import webstationapi.Entity.Price;
-import webstationapi.Exception.WebStationException;
 import webstationapi.Repository.PeriodRepository;
 import webstationapi.Repository.PriceRepository;
-
-import java.sql.Date;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.temporal.Temporal;
-import java.time.temporal.TemporalUnit;
-import java.util.*;
-
-import java.time.temporal.ChronoUnit;
 
 @Service
 public class PriceService {
@@ -44,7 +44,7 @@ public class PriceService {
         } else {
             Map<Period, Double> dailyPrices = new HashMap<Period, Double>();
             for(Period periods : periodsUsed) {
-                dailyPrices.put(periods, priceRepository.computePrice(periods.getPeriodId(), idFlat).getPrice() / 7);
+                dailyPrices.put(periods, priceRepository.computePrice(periods.getPeriodId(), idFlat).getPrice() / ChronoUnit.DAYS.between((Temporal) periods.getStartDay(), (Temporal) periods.getEndDay()));
             }
             Calendar cal = Calendar.getInstance();
             for(int i = 1; i <= ChronoUnit.DAYS.between((Temporal) dDeb, (Temporal) dFin); i++) {
