@@ -42,6 +42,38 @@ public class Period {
 	@Column(name = "SEASON")
 	private int season;
 
+	public long getPeriodId() {
+		return periodId;
+	}
+
+	public void setPeriodId(long periodId) {
+		this.periodId = periodId;
+	}
+
+	public Date getStartDay() {
+		return startDay;
+	}
+
+	public void setStartDay(Date startDay) {
+		this.startDay = startDay;
+	}
+
+	public Date getEndDay() {
+		return endDay;
+	}
+
+	public void setEndDay(Date endDay) {
+		this.endDay = endDay;
+	}
+
+	public int getSeason() {
+		return season;
+	}
+
+	public void setSeason(int season) {
+		this.season = season;
+	}
+
 	public Period() {}
 	public Period(long periodId, Date startDay, Date endDay, int season) {
 		this.periodId = periodId;

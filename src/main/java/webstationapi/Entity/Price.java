@@ -1,12 +1,8 @@
 package webstationapi.Entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -32,6 +28,14 @@ public class Price implements Serializable {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="ID_PERIOD")
     private Period period;
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     @Id
     @OneToOne(fetch = FetchType.LAZY)
