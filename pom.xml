@@ -16,7 +16,7 @@
 
     <properties>
         <docker.image.prefix>damilink</docker.image.prefix>
-        <sonar.coverage.exclusions>src/**/Main.java</sonar.coverage.exclusions>
+        <sonar.coverage.exclusions>src/**/Main.java, src/**/Entity/**/*,src/**/DTO/**/*, src/**/Enum/**/*,src/**/Config/**/*,src/**/Repository/**/* </sonar.coverage.exclusions>
         <java.version>1.8</java.version>
     </properties>
 
@@ -88,7 +88,35 @@
                 </configuration>
             </plugin>
             <!-- end::plugin[] -->
-
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.2</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*Entity/**/*</exclude>
+                        <exclude>**/*Repository/**/*</exclude>
+                        <exclude>**/*DTO/**/*</exclude>
+                        <exclude>**/*Enum/**/*</exclude>
+                        <exclude>**/*Config/**/*</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <!-- attached to Maven test phase -->
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <!-- tag::unpack[] -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
